@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Pigeon Defender</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="game-container">
+        <canvas id="gameCanvas"></canvas>
+        <div id="ui-layer">
+            <div id="health-bar-container">
+                <div id="health-bar"></div>
+            </div>
+            <div id="distance-display">Distance: 0m</div>
+        </div>
+        <div id="game-over-screen" class="hidden">
+            <h1>You can do this!</h1>
+            <p>Tap to Restart</p>
+        </div>
+        <div id="win-screen" class="hidden">
+            <h1>You Made It!</h1>
+            <p>Tap to Play Again</p>
+        </div>
+        <!-- Virtual D-Pad for Mobile -->
+        <div id="dpad-container">
+            <div id="dpad-left" class="dpad-btn"></div>
+            <div id="dpad-right" class="dpad-btn"></div>
+            <div id="dpad-up" class="dpad-btn"></div>
+            <div id="dpad-down" class="dpad-btn"></div>
+        </div>
+    </div>
+    <script src="js/game.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    touch-action: none; /* Prevent browser zooming/scrolling */
+    user-select: none;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #87CEEB; /* Sky blue background */
+    font-family: 'Arial', sans-serif;
+}
+
+#game-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#ui-layer {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 100%;
+    pointer-events: none; /* Let clicks pass through to canvas */
+}
+
+#health-bar-container {
+    width: 200px;
+    height: 20px;
+    background-color: #333;
+    border: 2px solid #000;
+    margin-bottom: 5px;
+}
+
+#health-bar {
+    width: 100%;
+    height: 100%;
+    background-color: #ff0000;
+    transition: width 0.2s;
+}
+
+#distance-display {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#game-over-screen, #win-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    z-index: 100;
+}
+
+#dpad-container {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: 150px;
+    height: 150px;
+    /* Semi-transparent so we can see game behind */
+    background: rgba(255, 255, 255, 0.1); 
+    border-radius: 50%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    pointer-events: auto;
+}
+
+.dpad-btn {
+    /* Visual debug helper - can remove background later */
+    /* background: rgba(255, 0, 0, 0.2); */ 
+}
+
+#dpad-up { grid-column: 2; grid-row: 1; }
+#dpad-left { grid-column: 1; grid-row: 2; }
+#dpad-right { grid-column: 3; grid-row: 2; }
+#dpad-down { grid-column: 2; grid-row: 3; }
